@@ -26,7 +26,7 @@ export const Clock = () => {
       {!isRunning && time === 0 && (
         <button onClick={() => setIsRunning(true)}>Start</button>
       )}
-      <button onClick={() => setIsRunning(false)}>Stop</button>
+      {isRunning && <button onClick={() => setIsRunning(false)}>Stop</button>}
     </div>
   )
 }
