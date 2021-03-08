@@ -23,7 +23,9 @@ export const Clock = () => {
         <time>{('0' + Math.floor((time / 1000) % 60)).slice(-2)}:</time>
         <time>{('0' + ((time / 10) % 100)).slice(-2)}</time>
       </p>
-      <button onClick={() => setIsRunning(true)}>Start</button>
+      {!isRunning && time === 0 && (
+        <button onClick={() => setIsRunning(true)}>Start</button>
+      )}
       <button onClick={() => setIsRunning(false)}>Stop</button>
     </div>
   )
