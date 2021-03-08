@@ -16,12 +16,14 @@ export const Clock = () => {
     return () => clearInterval(intervalId)
   }, [isRunning])
 
+  const formatTime = time => ('0' + time).slice(-2)
+
   return (
     <div>
       <p>
-        <time>{('0' + Math.floor((time / 60000) % 60)).slice(-2)}:</time>
-        <time>{('0' + Math.floor((time / 1000) % 60)).slice(-2)}:</time>
-        <time>{('0' + ((time / 10) % 100)).slice(-2)}</time>
+        <time>{formatTime(Math.floor((time / 60000) % 60))}:</time>
+        <time>{formatTime(Math.floor((time / 1000) % 60))}:</time>
+        <time>{formatTime((time / 10) % 100)}</time>
       </p>
       {!isRunning && time === 0 && (
         <button onClick={() => setIsRunning(true)}>Start</button>
