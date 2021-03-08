@@ -20,10 +20,12 @@ export const Clock = () => {
 
   const convertTimeToSeconds = time => Math.floor((time / 1000) % 60)
 
+  const convertTimeToMinutes = time => Math.floor((time / 60000) % 60)
+
   return (
     <div>
       <p>
-        <time>{formatTime(Math.floor((time / 60000) % 60))}:</time>
+        <time>{formatTime(convertTimeToMinutes(time))}:</time>
         <time>{formatTime(convertTimeToSeconds(time))}:</time>
         <time>{formatTime((time / 10) % 100)}</time>
       </p>
