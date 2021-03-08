@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.buttons {
+  display: flex;
+}
+
 .clockContainer button {
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -13,10 +17,13 @@
   border: none;
   border-radius: 5px;
 
-  padding: 0.3rem 0.5rem;
-  margin: 1rem 0.2rem;
+  padding: 0.5rem;
+  margin: 0 0.3rem;
+
+  display: flex;
 }
 
 .clockTime {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin: 1rem 0;
 }
