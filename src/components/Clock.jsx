@@ -19,7 +19,8 @@ export const Clock = () => {
   return (
     <div>
       <p>
-        <time dateTime='00'>00</time>:<time dateTime='00'>00</time>:
+        <time dateTime='00'>00:</time>
+        <time>{('0' + Math.floor((time / 1000) % 60)).slice(-2)}:</time>
         <time>{('0' + ((time / 10) % 100)).slice(-2)}</time>
       </p>
       {isRunning ? (
