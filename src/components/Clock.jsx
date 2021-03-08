@@ -18,16 +18,18 @@ export const Clock = () => {
 
   const formatTime = time => ('0' + time).slice(-2)
 
-  const convertMilisecondsToSeconds = ms => Math.floor((ms / 1000) % 60)
+  const convertTimeToSeconds = time => Math.floor((time / 1000) % 60)
 
-  const convertMilisecondsToMinutes = ms => Math.floor((ms / 60000) % 60)
+  const convertTimeToMinutes = time => Math.floor((time / 60000) % 60)
+
+  const convertTimeToMiliseconds = time => (time / 10) % 100
 
   return (
     <div>
       <p>
-        <time>{formatTime(convertMilisecondsToMinutes(time))}:</time>
-        <time>{formatTime(convertMilisecondsToSeconds(time))}:</time>
-        <time>{formatTime((time / 10) % 100)}</time>
+        <time>{formatTime(convertTimeToMinutes(time))}:</time>
+        <time>{formatTime(convertTimeToSeconds(time))}:</time>
+        <time>{formatTime(convertTimeToMiliseconds(time))}</time>
       </p>
 
       {!isRunning && time === 0 && (
