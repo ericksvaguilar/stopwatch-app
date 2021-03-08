@@ -20,7 +20,7 @@ export const Clock = () => {
     <div>
       <p>
         <time dateTime='00'>00</time>:<time dateTime='00'>00</time>:
-        <time dateTime={time}>{time}</time>
+        <time>{('0' + ((time / 10) % 100)).slice(-2)}</time>
       </p>
       {isRunning ? (
         <button onClick={() => setIsRunning(false)}>Stop</button>
