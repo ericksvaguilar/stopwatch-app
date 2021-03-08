@@ -1,0 +1,22 @@
+.clockContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clockContainer button {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+
+  cursor: pointer;
+
+  border: none;
+  border-radius: 5px;
+
+  padding: 0.3rem 0.5rem;
+  margin: 1rem 0.2rem;
+}
+
+.clockTime {
+  font-size: 2rem;
+}
