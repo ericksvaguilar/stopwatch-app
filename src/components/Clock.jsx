@@ -1,4 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import {
+  formatTime,
+  convertTimeToSeconds,
+  convertTimeToMinutes,
+  convertTimeToMiliseconds,
+} from '../utilities/TimeUtils'
 
 export const Clock = () => {
   const [time, setTime] = useState(0)
@@ -15,14 +21,6 @@ export const Clock = () => {
 
     return () => clearInterval(intervalId)
   }, [isRunning])
-
-  const formatTime = time => ('0' + time).slice(-2)
-
-  const convertTimeToSeconds = time => Math.floor((time / 1000) % 60)
-
-  const convertTimeToMinutes = time => Math.floor((time / 60000) % 60)
-
-  const convertTimeToMiliseconds = time => (time / 10) % 100
 
   return (
     <div>
