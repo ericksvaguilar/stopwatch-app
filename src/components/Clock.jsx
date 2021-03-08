@@ -25,25 +25,27 @@ export const Clock = () => {
 
   return (
     <div className={styles.clockContainer}>
-      <p>
+      <div className={styles.clockTime}>
         <time>{formatTime(convertTimeToMinutes(time))}:</time>
         <time>{formatTime(convertTimeToSeconds(time))}:</time>
         <time>{formatTime(convertTimeToMiliseconds(time))}</time>
-      </p>
+      </div>
 
-      {!isRunning && time === 0 && (
-        <button onClick={() => setIsRunning(true)}>Start</button>
-      )}
+      <div>
+        {!isRunning && time === 0 && (
+          <button onClick={() => setIsRunning(true)}>Start</button>
+        )}
 
-      {isRunning && <button onClick={() => setIsRunning(false)}>Stop</button>}
+        {isRunning && <button onClick={() => setIsRunning(false)}>Stop</button>}
 
-      {!isRunning && time !== 0 && (
-        <button onClick={() => setIsRunning(true)}>Resume</button>
-      )}
+        {!isRunning && time !== 0 && (
+          <button onClick={() => setIsRunning(true)}>Resume</button>
+        )}
 
-      {!isRunning && time !== 0 && (
-        <button onClick={() => setTime(0)}>Reset</button>
-      )}
+        {!isRunning && time !== 0 && (
+          <button onClick={() => setTime(0)}>Reset</button>
+        )}
+      </div>
     </div>
   )
 }
