@@ -32,6 +32,10 @@ export const Clock = () => {
       {!isRunning && time !== 0 && (
         <button onClick={() => setIsRunning(true)}>Resume</button>
       )}
+
+      {!isRunning && time !== 0 && (
+        <button onClick={() => setTime(0)}>Reset</button>
+      )}
     </div>
   )
 }
