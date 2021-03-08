@@ -1,3 +1,4 @@
+import styles from '../styles/components/Clock.module.css'
 import React, { useEffect, useState } from 'react'
 import {
   formatTime,
@@ -23,7 +24,7 @@ export const Clock = () => {
   }, [isRunning])
 
   return (
-    <div>
+    <div className={styles.clockContainer}>
       <p>
         <time>{formatTime(convertTimeToMinutes(time))}:</time>
         <time>{formatTime(convertTimeToSeconds(time))}:</time>
