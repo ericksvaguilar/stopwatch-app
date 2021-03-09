@@ -13,6 +13,7 @@
 
 ## Live Preview
 
+https://stopwatch-app.vercel.app/
 
 ## Technologies Used
 
